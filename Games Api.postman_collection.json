@@ -1,0 +1,888 @@
+{
+	"info": {
+		"_postman_id": "38aaf968-81d9-40eb-90f4-f184d897a9b2",
+		"name": "Games Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47283017",
+		"_collection_link": "https://benavides-renault-774452.postman.co/workspace/Benavides_Renault's-Workspace~30749c52-8d26-492c-8794-31670456577b/collection/47283017-38aaf968-81d9-40eb-90f4-f184d897a9b2?action=share&source=collection_link&creator=47283017"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "201",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Room A\",\r\n  \"maxPlayers\": 2,\r\n  \"playerName\": \"Alice\",\r\n  \"state\": \"waiting\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"games"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Room A\",\r\n  \"maxPlayers\": 2,\r\n  \"playerName\": \"Alice\",\r\n  \"state\": \"waiting\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "Crea el juego con players:[\"Alice\"], state:\"waiting\", score:null. Respuesta 200/201 con objeto del juego (incluye id)."
+						}
+					]
+				},
+				{
+					"name": "400",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"maxPlayers\": 2\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"games"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"maxPlayers\": 2\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "Sin validación en DTO, suele terminar en 500 (“Something went very wrong!”). Con validación debería ser 400 Bad Request indicando campos faltantes."
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "200",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/games/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"games",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/games/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "La Partida se ha encontrado"
+						}
+					]
+				},
+				{
+					"name": "400",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/games/54",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"games",
+								"54"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "400",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/games/54",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"54"
+									]
+								}
+							},
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [
+								{
+									"expires": "Invalid Date"
+								}
+							],
+							"body": "No existo o no se encontro la partida"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PATCH",
+			"item": [
+				{
+					"name": "JOIN",
+					"item": [
+						{
+							"name": "200",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"playerName\": \"Bob\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/5/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5",
+										"join"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"playerName\": \"Bob\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/5/join",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"5",
+												"join"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "Agrega “Bob” a players. 200 OK con mensaje \"joined succes!\""
+								}
+							]
+						},
+						{
+							"name": "500",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"playerName\": \"Bob\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/5/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5",
+										"join"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "500",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"playerName\": \"Bob\"\r\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/5/join",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"5",
+												"join"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "ERROR del Servidor"
+								}
+							]
+						},
+						{
+							"name": "400",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"playerName\": \"Bob\" }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/5/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5",
+										"join"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "400",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{ \"playerName\": \"Bob\" }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/5/join",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"5",
+												"join"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "Ese Jugador ya existe no se puede repetir el NAME "
+								}
+							]
+						},
+						{
+							"name": "400",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/5/join",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5",
+										"join"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "400",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/5/join",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"5",
+												"join"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "No se puedo nombre del Player (Falta DATOS)"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "START",
+					"item": [
+						{
+							"name": "200",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/5/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5",
+										"start"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/5/start",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"5",
+												"start"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "200 OK con \"The game has been started\". El servicio pone state = IN_PROFRESS (typo; lo correcto sería IN_PROGRESS)"
+								}
+							]
+						},
+						{
+							"name": "400",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/50/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"50",
+										"start"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "400",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/50/start",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"50",
+												"start"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "Juego no existe"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "END",
+					"item": [
+						{
+							"name": "500",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"score\": { \"Alice\": 10, \"Bob\": 8 }\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/5/end",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5",
+										"end"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "500",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"score\": { \"Alice\": 10, \"Bob\": 8 }\r\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/5/end",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"5",
+												"end"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "Error de Servidor (no entiendo por que sale este error si deberia dar un 200)\r\n"
+								}
+							]
+						},
+						{
+							"name": "400",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/50/start",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"50",
+										"start"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "400",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/50/start",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"50",
+												"start"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "No Exite el juego"
+								}
+							]
+						},
+						{
+							"name": "500",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/games/5/end",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"games",
+										"5",
+										"end"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "500",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/games/5/end",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"games",
+												"5",
+												"end"
+											]
+										}
+									},
+									"_postman_previewlanguage": "",
+									"header": [],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "Error de Servidor (no entiendo por que sale este error si deberia dar un 400 por no poner el score)\r\n"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PUT",
+			"item": []
+		},
+		{
+			"name": "DELETE",
+			"item": []
+		},
+		{
+			"name": "HEAD",
+			"item": []
+		},
+		{
+			"name": "OPTIONS",
+			"item": []
+		}
+	]
+}
