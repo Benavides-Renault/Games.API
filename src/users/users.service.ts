@@ -7,7 +7,6 @@ import { Game } from 'src/games/entities/game.entity';
 
 @Injectable()
 export class UsersService {
-
   private readonly logger = new Logger('UsersService');
 
   constructor(

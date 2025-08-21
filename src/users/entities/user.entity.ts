@@ -26,7 +26,4 @@ export class User extends Model {
 
   @BelongsToMany(() => Game, () => GamePlayer)
   games: Game[];
-
-
-
 }

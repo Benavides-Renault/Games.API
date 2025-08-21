@@ -19,7 +19,6 @@ export class GamesService {
     @InjectModel(Game)
     private gameModel: typeof Game,
     private readonly userService: UsersService,
-
   ) {}
 
   async create(createGameDto: CreateGameDto) {
